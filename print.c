@@ -9,20 +9,20 @@
  * @%: modulo
  * Return: the number of characters printed
  */
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	va_list types;
 
-	if (*format == NULL)
+	if (format == NULL)
 
 		return (-1);
-	va_start(types, format)
+	va_start(types, format);
 	{
 		while (*format)
 			if (*format == '%')
 			{
 				if ((*format + 1) == 'c')
-					_putchar(types);
+					putchar(types);
 			}
 			else if ((*format + 1) == 's')
 			{
